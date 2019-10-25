@@ -16,8 +16,8 @@ variables:
 
 steps:
 
-- script: 'if not exist X:\ (net use X: \\mlnetfilestorage.file.core.windows.net\datasets /u:mlnetfilestorage $(mlnetfilestorage.key))'
-  displayName: 'Map disk drive to Azure Files share folder'
+#- script: 'if not exist X:\ (net use X: \\mlnetfilestorage.file.core.windows.net\datasets /u:mlnetfilestorage $(mlnetfilestorage.key))'
+#  displayName: 'Map disk drive to Azure Files share folder'
 
 - script: dotnet build MLModel.Train/SentimentModel/SentimentModel.ConsoleApp/SentimentModel.ConsoleApp.csproj --configuration $(buildConfiguration)
   displayName: 'Build Trainer Console App (dotnet build) $(buildConfiguration)'
@@ -63,10 +63,7 @@ steps:
     arguments: '--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)'
     modifyOutputPath: false
 
-stages:
-- stage: Build
-  displayName: Build image
-  jobs:  
+jobs:  
   - job: Build
     displayName: Build
     pool:
@@ -79,3 +76,4 @@ stages:
         dockerfile: '**/Dockerfile'
         tags: |
           $(tag)
+  
