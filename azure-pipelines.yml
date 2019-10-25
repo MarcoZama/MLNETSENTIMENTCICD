@@ -1,7 +1,7 @@
 # Build CI pipeline for ML.NET model, its trainer app and end-user WebAPI service
 
-trigger:
-- master
+#trigger:
+#- master
 
 # Microsoft hosted agent
 pool:
