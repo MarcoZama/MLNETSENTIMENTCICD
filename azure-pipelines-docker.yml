@@ -63,13 +63,7 @@ steps:
     arguments: '--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)'
     modifyOutputPath: false
 
-#- task: PublishPipelineArtifact@0
-#  displayName: 'Publish WebAPI as pipeline artifact'
-#  inputs:
-#    artifactName: MLNETWebAPI
-#    targetPath: '$(Build.ArtifactStagingDirectory)'
-
-   stages:
+stages:
 - stage: Build
   displayName: Build image
   jobs:  
