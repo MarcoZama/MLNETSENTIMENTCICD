@@ -69,7 +69,7 @@ steps:
 #    artifactName: MLNETWebAPI
 #    targetPath: '$(Build.ArtifactStagingDirectory)'
 
-   stages:
+stages:
 - stage: Build
   displayName: Build image
   jobs:  
