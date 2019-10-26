@@ -24,6 +24,7 @@ namespace Scalable.WebAPI.Controllers
         {
             ModelInput sampleData = new ModelInput() { Text = sentimentText };
 
+
             //Predict sentiment
             ModelOutput prediction = _predictionEnginePool.Predict(sampleData);
 
