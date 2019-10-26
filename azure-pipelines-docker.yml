@@ -54,16 +54,14 @@ steps:
 - script: dotnet build Scalable.WebAPI/Scalable.WebAPI.csproj --configuration $(buildConfiguration)
   displayName: 'Build WebAPI service (dotnet build) $(buildConfiguration)'
 
-- task: DotNetCoreCLI@2
-  displayName: 'Generate WebAPI binaries (dotnet publish)'
-  inputs:
-    command: publish
-    publishWebProjects: false
-    projects: Scalable.WebAPI/Scalable.WebAPI.csproj
-    arguments: '--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)'
-    modifyOutputPath: false
 
-- task: Docker@2
+- task: DockerCompose@0
   inputs:
-    command: 'buildAndPush'
-    Dockerfile: '**/Dockerfile'
+    containerregistrytype: 'Azure Container Registry'
+    azureSubscription: 'Microsoft Azure Sponsorship(ae28c40e-d3d3-4678-8ffb-09b0fb83cbae)'
+    azureContainerRegistry: '{"loginServer":"zamadockerregistry.azurecr.io", "id" : "/subscriptions/ae28c40e-d3d3-4678-8ffb-09b0fb83cbae/resourceGroups/container-resource/providers/Microsoft.ContainerRegistry/registries/zamadockerregistry"}'
+    dockerComposeFile: '**/docker-compose.yml'
+    action: 'Build services'
+    includeSourceTags: true
+    includeLatestTag: true
+
