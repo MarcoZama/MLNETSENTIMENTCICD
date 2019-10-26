@@ -5,4 +5,4 @@ services:
     image: ${DOCKER_REGISTRY-}scalablewebapi
     build:
       context: .
-      dockerfile: Scalable.WebAPI/Dockerfile
+      dockerfile: Scalable.WebAPI\Dockerfile

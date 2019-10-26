@@ -2,10 +2,10 @@
 <Project ToolsVersion="15.0" Sdk="Microsoft.Docker.Sdk">
   <PropertyGroup Label="Globals">
     <ProjectVersion>2.1</ProjectVersion>
-    <DockerTargetOS>Linux</DockerTargetOS>
-    <ProjectGuid>441ca62b-5277-40f4-8ec2-a415c9ccb0a8</ProjectGuid>
+    <DockerTargetOS>Windows</DockerTargetOS>
+    <ProjectGuid>a5a297b7-92d3-4751-8728-03961368e9e2</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
-    <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/api/predictor/sentimentprediction%3fsentimentText=ML.NET is awesome</DockerServiceUrl>
+    <DockerServiceUrl>{Scheme}://{ServiceIPAddress}{ServicePort}/api/predictor/sentimentprediction%3fsentimentText=ML.NET is awesome</DockerServiceUrl>
     <DockerServiceName>scalable.webapi</DockerServiceName>
   </PropertyGroup>
   <ItemGroup>
