@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  scalable.webapi:
+    image: ${DOCKER_REGISTRY-}scalablewebapi
+    build:
+      context: .
+      dockerfile: Scalable.WebAPI\Dockerfile
