@@ -14,6 +14,7 @@ namespace Scalable.WebAPI.Controllers
         public PredictorController(PredictionEnginePool<ModelInput, ModelOutput> predictionEnginePool)
         {
             // Get the ML Model Engine injected, for scoring
+
             _predictionEnginePool = predictionEnginePool;
         }
 
