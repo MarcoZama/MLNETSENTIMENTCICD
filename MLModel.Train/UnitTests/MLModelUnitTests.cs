@@ -26,6 +26,7 @@ namespace Tests
         {
             _mlContext = new MLContext();
 
+
             _trainedModel = _mlContext.Model.Load(GetAbsolutePath(MODEL_FILEPATH), out var modelInputSchema);
         }
 
