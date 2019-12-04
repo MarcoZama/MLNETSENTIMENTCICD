@@ -69,6 +69,7 @@ namespace Tests
 
             IEnumerable<ModelInput> samplesForPrediction = _mlContext.Data.CreateEnumerable<ModelInput>(testDataView, false);
 
+
             //DO BULK PREDICTIONS
             IDataView predictionsDataView = _trainedModel.Transform(testDataView);
 
