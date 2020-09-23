@@ -28,6 +28,7 @@ namespace SentimentModel.ConsoleApp
             ITransformer mlModel = mlContext.Model.Load(GetAbsolutePath(MODEL_FILEPATH), out DataViewSchema inputSchema);
             var predEngine = mlContext.Model.CreatePredictionEngine<ModelInput, ModelOutput>(mlModel);
 
+
             // Create sample data to do a single prediction with it 
             string inputSampleText = "ML.NET is awesome!";
             ModelInput sampleData = CreateSingleDataSample(inputSampleText);
