@@ -53,7 +53,7 @@ namespace Tests
 
             var resultprediction = predEngine.Predict(sampleStatement);
 
-            Assert.AreEqual(false, Convert.ToBoolean(resultprediction.Prediction));
+            Assert.AreEqual(true, Convert.ToBoolean(resultprediction.Prediction));
         }
 
  
