@@ -83,6 +83,7 @@ namespace Tests
             double accuracy = metrics.Accuracy;
             Console.WriteLine($"Accuracy of model in this validation '{accuracy*100}'%");
             
+
             Assert.GreaterOrEqual(0.80, accuracy);
         }
 
