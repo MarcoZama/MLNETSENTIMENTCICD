@@ -35,6 +35,7 @@ namespace Tests
         {
             ModelInput sampleStatement = new ModelInput { Text = "ML.NET is awesome!" };
 
+
             var predEngine = _mlContext.Model.CreatePredictionEngine<ModelInput, ModelOutput>(_trainedModel);
 
             var resultprediction = predEngine.Predict(sampleStatement);
